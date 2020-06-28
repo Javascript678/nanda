@@ -1,0 +1,18 @@
+package runner;
+
+import org.junit.runner.RunWith;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features = "{Test_Features_Folder}/{Feature_File}.feature",
+		glue={"classpath:stepdefs"},
+		monochrome = true,
+		plugin = {	"html:Test_Report/CucumberReport/{Feature_File}/html",
+					"json:Test_Report/CucumberReport/{Feature_File}/json/result.json",
+					"junit:Test_Report/CucumberReport/{Feature_File}/junit/result.xml"
+				},tags = {"@{PhaseNo}"}
+		)
+public class {JUnitRunnerName}{
+}
